@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
+// Should be REQUEST type (Components are singleton by default and holds the last value)
 @Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class FortuneCookieBuilder {
 
