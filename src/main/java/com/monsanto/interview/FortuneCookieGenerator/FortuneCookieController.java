@@ -20,9 +20,8 @@ public class FortuneCookieController {
     FortuneCookie generateFortuneCookie(@RequestParam("client") String client,
                                         @RequestParam("company") String company) {
 
-        String quote = quoteRepository.getRandomQuote();
-        System.out.println("Quote: " + quote);
-        FortuneCookie fortuneCookie = fortuneCookieBuilder.withClient(client).
+        final String quote = quoteRepository.getRandomQuote();
+        final FortuneCookie fortuneCookie = fortuneCookieBuilder.withClient(client).
                 withCompany(company).
                 withQuote(quote).
                 build();
